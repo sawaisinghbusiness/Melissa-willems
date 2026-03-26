@@ -226,64 +226,32 @@ nav::before{
 
 /* ══ SLIDE MENU INNER ══ */
 .menu-logo-area{
-  padding:48px 20px 16px;
+  padding:52px 36px 28px;
   border-bottom:1px solid rgba(212,168,67,0.1);
   flex-shrink:0;
-  display:flex;
-  align-items:center;
-  gap:12px;
 }
 .menu-logo-text{
   font-family:'Playfair Display',serif;
-  font-size:22px;font-weight:900;
+  font-size:32px;font-weight:900;
   color:var(--gold);
-  letter-spacing:4px;
+  letter-spacing:6px;
   text-transform:uppercase;
   line-height:1;
 }
 .menu-logo-sub{
   font-family:'Playfair Display',serif;
-  font-size:10px;font-style:italic;
+  font-size:12px;font-style:italic;
   color:rgba(212,168,67,0.4);
-  letter-spacing:1px;
-  margin-top:4px;
+  letter-spacing:2px;
+  margin-top:6px;
   display:block;
 }
 .menu-links{
   flex:1;
   display:flex;
   flex-direction:column;
-  justify-content:flex-start;
-  padding:12px 0;
-  overflow-y:auto;
-}
-/* Icon-row menu item style */
-.menu-links a{
-  display:flex !important;
-  align-items:center;
-  gap:14px;
-  padding:14px 20px !important;
-  font-family:'DM Sans',sans-serif !important;
-  font-size:14px !important;
-  font-weight:500 !important;
-  color:rgba(255,255,255,0.75) !important;
-  border-bottom:1px solid rgba(255,255,255,0.04) !important;
-  letter-spacing:0.3px !important;
-  transition:all 0.2s !important;
-  text-decoration:none;
-  border-radius:0 !important;
-}
-.menu-item-icon{
-  width:36px;height:36px;
-  border-radius:10px;
-  display:flex;align-items:center;justify-content:center;
-  flex-shrink:0;
-  font-size:17px;
-}
-.menu-item-arrow{
-  margin-left:auto;
-  color:rgba(255,255,255,0.2);
-  font-size:13px;
+  justify-content:center;
+  padding:0 36px;
 }
 /* HAMBURGER */
 .hamburger{
@@ -305,15 +273,15 @@ nav::before{
 .hamburger.open span:nth-child(2){opacity:0;transform:translateX(-10px);}
 .hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
 
-/* MOBILE SLIDE MENU — right side, compact width */
+/* MOBILE SLIDE MENU */
 #slideMenu{
   position:fixed;
   top:0;right:0;
-  width:200px;
-  max-width:55vw;
+  width:280px;
+  max-width:82vw;
   height:100vh;
-  background:#0f0f13;
-  border-left:1px solid rgba(212,168,67,0.12);
+  background:linear-gradient(160deg,#141418 0%,#0a0a0c 100%);
+  border-left:1px solid rgba(212,168,67,0.15);
   z-index:150;
   transform:translateX(100%);
   transition:transform 0.45s cubic-bezier(0.16,1,0.3,1);
@@ -328,23 +296,23 @@ nav::before{
 
 /* Logo area */
 #slideMenu .menu-logo-area{
-  padding:52px 20px 14px;
-  border-bottom:1px solid rgba(212,168,67,0.08);
+  padding:52px 32px 24px;
+  border-bottom:1px solid rgba(212,168,67,0.1);
   flex-shrink:0;
 }
 #slideMenu .menu-logo-text{
   font-family:'Playfair Display',serif;
-  font-size:16px;font-weight:900;
+  font-size:30px;font-weight:900;
   color:var(--gold);
-  letter-spacing:3px;
+  letter-spacing:6px;
   text-transform:uppercase;
 }
 #slideMenu .menu-logo-sub{
-  font-family:'DM Sans',sans-serif;
-  font-size:10px;
-  color:rgba(212,168,67,0.45);
-  letter-spacing:1px;
-  margin-top:2px;
+  font-family:'Playfair Display',serif;
+  font-size:11px;font-style:italic;
+  color:rgba(212,168,67,0.4);
+  letter-spacing:2px;
+  margin-top:4px;
   display:block;
 }
 
@@ -353,27 +321,22 @@ nav::before{
   flex:1;
   display:flex;
   flex-direction:column;
-  justify-content:flex-start;
-  padding:6px 0 16px;
-  overflow-y:auto;
+  justify-content:center;
+  padding:0 32px;
 }
 #slideMenu a{
-  font-family:'DM Sans',sans-serif;
-  font-size:14px;font-weight:500;
-  color:rgba(255,255,255,0.80);
+  font-family:'Playfair Display',serif;
+  font-size:28px;font-weight:700;
+  color:rgba(255,255,255,0.55);
   text-decoration:none;
-  padding:13px 20px;
-  border-bottom:1px solid rgba(255,255,255,0.04);
-  transition:all 0.2s;
-  display:flex;
-  align-items:center;
-  gap:14px;
+  padding:16px 0;
+  border-bottom:1px solid rgba(255,255,255,0.05);
+  transition:all 0.3s;
+  letter-spacing:1px;
+  display:block;
   width:100%;
 }
-#slideMenu a:hover{
-  background:rgba(212,168,67,0.06) !important;
-  color:var(--gold) !important;
-}
+#slideMenu a:hover{color:var(--gold);padding-left:10px;}
 
 /* Bottom book now */
 #slideMenu .menu-bottom{
@@ -431,11 +394,12 @@ nav::before{
   transform:translateY(-50%);
   width:400px;height:400px;
   perspective:1000px;
+  cursor:grab;
   user-select:none;
   touch-action:none;
-  z-index:10;
+  z-index:1;
 }
-.coin-wrap:active{cursor:default;}
+.coin-wrap:active{cursor:grabbing;}
 .coin{
   width:100%;height:100%;
   position:relative;
@@ -588,32 +552,6 @@ nav::before{
   content:'';
   width:50px;height:1px;
   background:linear-gradient(135deg,#8B6914,#D4A843);
-}
-.hero-eyebrow-card{
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-  background:rgba(212,168,67,0.08);
-  border:1px solid rgba(212,168,67,0.30);
-  border-radius:50px;
-  padding:8px 18px 8px 14px;
-  font-size:10px;
-  letter-spacing:4px;
-  text-transform:uppercase;
-  color:var(--gold);
-  margin-bottom:28px;
-  opacity:0;
-  animation:slideRight 1s 1.2s forwards;
-  backdrop-filter:blur(6px);
-  box-shadow:0 0 18px rgba(212,168,67,0.10);
-}
-.hero-eyebrow-card::before{
-  content:'';
-  width:6px;height:6px;
-  border-radius:50%;
-  background:var(--gold);
-  flex-shrink:0;
-  box-shadow:0 0 6px rgba(212,168,67,0.8);
 }
 
 .hero-name{
@@ -1176,6 +1114,23 @@ a.cd-val:hover{color:var(--gold);}
   outline:none;
   transition:all 0.3s;
 }
+/* SELECT DROPDOWN STYLING */
+select.fi{
+  appearance:none;
+  -webkit-appearance:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23D4A843' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;
+  background-position:right 16px center;
+  padding-right:40px;
+  cursor:pointer;
+}
+select.fi option{
+  background:#111114;
+  color:#FFFFFF;
+}
+select.fi option:disabled{
+  color:#888;
+}
 .fi:focus{
   border-color:var(--gold);
   background:rgba(212,168,67,0.06);
@@ -1638,35 +1593,18 @@ footer{
 
   <!-- TOP: Logo -->
   <div class="menu-logo-area">
-    <div>
-      <div class="menu-logo-text">MW</div>
-      <span class="menu-logo-sub">Bookkeeping & Tax Services</span>
-    </div>
+    <div class="menu-logo-text">MW</div>
+    <span class="menu-logo-sub">Bookkeeping & Tax Services</span>
   </div>
 
   <!-- MIDDLE: Links -->
   <div class="menu-links">
-    <a href="#services" onclick="toggleMenu()">
-      <span class="menu-item-icon" style="background:rgba(99,102,241,0.15);color:#818cf8;">📋</span>
-      Services
-      <span class="menu-item-arrow">›</span>
-    </a>
-    <a href="#about" onclick="toggleMenu()">
-      <span class="menu-item-icon" style="background:rgba(212,168,67,0.12);color:#D4A843;">👤</span>
-      About
-      <span class="menu-item-arrow">›</span>
-    </a>
-    <a href="#contact" onclick="toggleMenu()">
-      <span class="menu-item-icon" style="background:rgba(34,197,94,0.12);color:#4ade80;">📞</span>
-      Contact
-      <span class="menu-item-arrow">›</span>
-    </a>
-    <a href="mailto:melissa@mwbookkeeping.com" onclick="toggleMenu()">
-      <span class="menu-item-icon" style="background:rgba(251,146,60,0.12);color:#fb923c;">🎧</span>
-      Support
-      <span class="menu-item-arrow">›</span>
-    </a>
+    <a href="#services" onclick="toggleMenu()">Services</a>
+    <a href="#about" onclick="toggleMenu()">About</a>
+    <a href="#contact" onclick="toggleMenu()">Contact</a>
   </div>
+
+
 
 </div>
 
@@ -1696,7 +1634,7 @@ footer{
   </div>
 
   <div class="hero-content">
-    <div class="hero-eyebrow-card hero-anim">Bookkeeping & Tax Services</div>
+    <div class="hero-eyebrow hero-anim">Bookkeeping & Tax Services</div>
     <h1 class="hero-name hero-anim">
       <span class="first">Melissa</span>
       <span class="last">Willems</span>
@@ -1955,7 +1893,15 @@ footer{
       </div>
       <div class="fg">
         <label class="fl">Service Needed *</label>
-        <input type="text" class="fi" id="f_service" placeholder="Tax Preparation, Bookkeeping...">
+        <select class="fi" id="f_service">
+          <option value="" disabled selected>Select a service...</option>
+          <option value="Tax Preparation">Tax Preparation</option>
+          <option value="Bookkeeping">Bookkeeping</option>
+          <option value="Tax Planning">Tax Planning</option>
+          <option value="Payroll Services">Payroll Services</option>
+          <option value="Business Consulting">Business Consulting</option>
+          <option value="Tax Resolution">Tax Resolution</option>
+        </select>
         <span class="ferr" id="e_service">Please specify service needed</span>
       </div>
       <div class="fg">
@@ -1995,36 +1941,280 @@ footer{
 <!-- spopup removed - using flip card -->
 
 <!-- SOCIAL MEDIA -->
-<section id="social" style="
-  position:relative;z-index:2;
-  padding:80px 60px;
-  background:#0a0a0c;
-  border-top:1px solid rgba(212,168,67,0.08);
+<style>
+#social{
+  position:relative;
+  z-index:2;
+  background:#07070a;
+  border-top:1px solid rgba(212,168,67,0.1);
+  overflow:hidden;
+}
+.social-banner-strip{
+  background:linear-gradient(90deg,#0a0a0c 0%,#111108 40%,#0a0a0c 100%);
+  padding:60px 24px 56px;
   text-align:center;
-">
-  <div style="margin-bottom:48px;">
-    <p style="font-size:9px;letter-spacing:5px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:flex;align-items:center;justify-content:center;gap:14px;">
-      <span style="width:28px;height:1px;background:linear-gradient(135deg,#8B6914,#D4A843);display:inline-block;"></span>
-      Connect With Us
-      <span style="width:28px;height:1px;background:linear-gradient(135deg,#8B6914,#D4A843);display:inline-block;"></span>
-    </p>
-    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(32px,4vw,52px);font-weight:900;color:#060608;">
-      Follow <em style="font-style:italic;color:var(--gold);">Melissa</em>
-    </h2>
-  </div>
-  <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:16px;max-width:700px;margin:0 auto;">
-    <a href="https://www.instagram.com/mwbookkeepingandtax?igsh=MTN2OHptcTQ5azE3dg==" target="_blank" class="s-link" style="--sc:rgba(225,48,108,0.8);">
-      <div class="s-icon-wrap" style="background:rgba(225,48,108,0.08);border-color:rgba(225,48,108,0.2);">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-      </div>
-      <span>Instagram</span>
-    </a>
-    <a href="https://www.facebook.com/MWBookkeepingandTax/" target="_blank" class="s-link" style="--sc:rgba(24,119,242,0.8);">
-      <div class="s-icon-wrap" style="background:rgba(24,119,242,0.08);border-color:rgba(24,119,242,0.2);">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
-      </div>
-      <span>Facebook</span>
-    </a>
+  position:relative;
+}
+.social-banner-strip::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(212,168,67,0.4),transparent);
+}
+.social-banner-strip::after{
+  content:'';
+  position:absolute;
+  bottom:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(212,168,67,0.15),transparent);
+}
+/* Ambient glow */
+.social-glow{
+  position:absolute;
+  width:500px;height:300px;
+  border-radius:50%;
+  background:radial-gradient(ellipse,rgba(212,168,67,0.04) 0%,transparent 70%);
+  left:50%;top:50%;
+  transform:translate(-50%,-50%);
+  pointer-events:none;
+}
+.social-eyebrow{
+  font-size:9px;
+  letter-spacing:5px;
+  text-transform:uppercase;
+  color:rgba(212,168,67,0.6);
+  margin-bottom:14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+}
+.social-eyebrow span{
+  width:28px;height:1px;
+  background:linear-gradient(135deg,#8B6914,#D4A843);
+  display:inline-block;
+}
+.social-heading{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(28px,5vw,48px);
+  font-weight:900;
+  color:#fff;
+  margin-bottom:40px;
+  line-height:1.1;
+}
+.social-heading em{
+  font-style:italic;
+  color:var(--gold);
+}
+/* Cards row */
+.social-cards{
+  display:flex;
+  justify-content:center;
+  gap:16px;
+  flex-wrap:wrap;
+  max-width:600px;
+  margin:0 auto;
+}
+.social-card{
+  flex:1;
+  min-width:140px;
+  max-width:240px;
+  border-radius:16px;
+  overflow:hidden;
+  text-decoration:none;
+  position:relative;
+  transition:transform 0.35s cubic-bezier(0.16,1,0.3,1), box-shadow 0.35s;
+}
+.social-card:hover{
+  transform:translateY(-6px) scale(1.02);
+}
+/* Instagram card */
+.social-card.insta{
+  background:linear-gradient(145deg,#1a0a10 0%,#130818 100%);
+  border:1px solid rgba(225,48,108,0.2);
+  box-shadow:0 4px 24px rgba(225,48,108,0.08);
+}
+.social-card.insta:hover{
+  box-shadow:0 12px 40px rgba(225,48,108,0.22);
+  border-color:rgba(225,48,108,0.45);
+}
+/* Facebook card */
+.social-card.fb{
+  background:linear-gradient(145deg,#080f1a 0%,#060c18 100%);
+  border:1px solid rgba(24,119,242,0.2);
+  box-shadow:0 4px 24px rgba(24,119,242,0.08);
+}
+.social-card.fb:hover{
+  box-shadow:0 12px 40px rgba(24,119,242,0.22);
+  border-color:rgba(24,119,242,0.45);
+}
+/* Thumbnail preview area */
+.sc-thumb{
+  width:100%;
+  height:110px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  overflow:hidden;
+}
+.social-card.insta .sc-thumb{
+  background:linear-gradient(135deg,rgba(225,48,108,0.12),rgba(131,58,180,0.12));
+}
+.social-card.fb .sc-thumb{
+  background:linear-gradient(135deg,rgba(24,119,242,0.12),rgba(10,60,130,0.12));
+}
+/* Grid lines inside thumb */
+.sc-thumb::before{
+  content:'';
+  position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);
+  background-size:20px 20px;
+}
+.sc-platform-icon{
+  width:48px;height:48px;
+  border-radius:14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;z-index:1;
+}
+.social-card.insta .sc-platform-icon{
+  background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);
+  box-shadow:0 4px 20px rgba(225,48,108,0.4);
+}
+.social-card.fb .sc-platform-icon{
+  background:linear-gradient(135deg,#1877f2,#0a5ec7);
+  box-shadow:0 4px 20px rgba(24,119,242,0.4);
+}
+.sc-platform-icon svg{stroke:#fff;fill:none;}
+/* Card body */
+.sc-body{
+  padding:14px 16px 16px;
+  text-align:left;
+}
+.sc-platform-name{
+  font-size:9px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  margin-bottom:4px;
+}
+.social-card.insta .sc-platform-name{color:rgba(225,48,108,0.7);}
+.social-card.fb .sc-platform-name{color:rgba(24,119,242,0.7);}
+.sc-handle{
+  font-family:'Playfair Display',serif;
+  font-size:13px;
+  font-weight:700;
+  color:#fff;
+  margin-bottom:12px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+/* Follow button */
+.sc-follow-btn{
+  width:100%;
+  padding:9px 0;
+  border-radius:8px;
+  font-size:10px;
+  letter-spacing:2.5px;
+  text-transform:uppercase;
+  font-weight:600;
+  font-family:'DM Sans',sans-serif;
+  border:none;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:7px;
+  transition:all 0.3s;
+  text-decoration:none;
+  position:relative;
+  overflow:hidden;
+}
+.sc-follow-btn::before{
+  content:'';
+  position:absolute;inset:0;
+  opacity:0;
+  transition:opacity 0.3s;
+}
+.social-card.insta .sc-follow-btn{
+  background:rgba(225,48,108,0.12);
+  color:rgba(225,48,108,0.9);
+  border:1px solid rgba(225,48,108,0.25);
+}
+.social-card.insta .sc-follow-btn::before{
+  background:linear-gradient(135deg,#f09433,#dc2743,#bc1888);
+}
+.social-card.fb .sc-follow-btn{
+  background:rgba(24,119,242,0.12);
+  color:rgba(24,119,242,0.9);
+  border:1px solid rgba(24,119,242,0.25);
+}
+.social-card.fb .sc-follow-btn::before{
+  background:linear-gradient(135deg,#1877f2,#0a5ec7);
+}
+.social-card:hover .sc-follow-btn::before{opacity:1;}
+.social-card:hover .sc-follow-btn{color:#fff;border-color:transparent;}
+.sc-follow-btn span{position:relative;z-index:1;}
+/* Animated shimmer on hover */
+@keyframes shimmer{
+  0%{transform:translateX(-100%);}
+  100%{transform:translateX(100%);}
+}
+.social-card:hover .sc-thumb::after{
+  content:'';
+  position:absolute;
+  top:0;left:0;
+  width:60%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,0.05),transparent);
+  animation:shimmer 0.8s ease forwards;
+}
+</style>
+
+<section id="social">
+  <div class="social-banner-strip">
+    <div class="social-glow"></div>
+    <div class="social-eyebrow">
+      <span></span>Stay Connected<span></span>
+    </div>
+    <h2 class="social-heading">Follow <em>Melissa</em></h2>
+    <div class="social-cards">
+
+      <!-- Instagram -->
+      <a href="https://www.instagram.com/mwbookkeepingandtax?igsh=MTN2OHptcTQ5azE3dg==" target="_blank" class="social-card insta">
+        <div class="sc-thumb">
+          <div class="sc-platform-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </div>
+        </div>
+        <div class="sc-body">
+          <div class="sc-platform-name">Instagram</div>
+          <div class="sc-handle">@mwbookkeepingandtax</div>
+          <div class="sc-follow-btn">
+            <span>Follow</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Facebook -->
+      <a href="https://www.facebook.com/MWBookkeepingandTax/" target="_blank" class="social-card fb">
+        <div class="sc-thumb">
+          <div class="sc-platform-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </div>
+        </div>
+        <div class="sc-body">
+          <div class="sc-platform-name">Facebook</div>
+          <div class="sc-handle">MW Bookkeeping & Tax</div>
+          <div class="sc-follow-btn">
+            <span>Follow</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
   </div>
 </section>
 
@@ -2065,6 +2255,57 @@ const lpercent = document.getElementById('lpercent');
 const loaderText = document.getElementById('loader-text');
 const loadMsgs = ['Initializing','Loading Assets','Building Layout','Almost Ready','Welcome'];
 
+// Data tick sound
+let audioCtx = null;
+function playTickSound(progress) {
+  try {
+    if(!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    const osc = audioCtx.createOscillator();
+    const gain = audioCtx.createGain();
+    const filter = audioCtx.createBiquadFilter();
+    filter.type = 'bandpass';
+    filter.frequency.value = 800 + (progress * 12);
+    osc.connect(filter);
+    filter.connect(gain);
+    gain.connect(audioCtx.destination);
+    osc.type = 'square';
+    osc.frequency.setValueAtTime(400 + (progress * 6), audioCtx.currentTime);
+    osc.frequency.exponentialRampToValueAtTime(200 + (progress * 4), audioCtx.currentTime + 0.04);
+    gain.gain.setValueAtTime(0.06, audioCtx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.05);
+    osc.start(audioCtx.currentTime);
+    osc.stop(audioCtx.currentTime + 0.06);
+  } catch(e){}
+}
+
+function playFinalSound() {
+  try {
+    if(!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    const notes = [600, 900, 1200, 1800];
+    notes.forEach((freq, i) => {
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      osc.type = 'sine';
+      osc.frequency.value = freq;
+      gain.gain.setValueAtTime(0, audioCtx.currentTime + i * 0.08);
+      gain.gain.linearRampToValueAtTime(0.15, audioCtx.currentTime + i * 0.08 + 0.02);
+      gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + i * 0.08 + 0.3);
+      osc.start(audioCtx.currentTime + i * 0.08);
+      osc.stop(audioCtx.currentTime + i * 0.08 + 0.3);
+    });
+  } catch(e){}
+}
+
+// Init audioCtx on first user interaction
+document.addEventListener('touchstart', () => {
+  if(!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+}, { once: true });
+document.addEventListener('click', () => {
+  if(!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+}, { once: true });
+
 const ldrInt = setInterval(() => {
   prog += Math.random() * 12 + 2;
   if(prog >= 100){
@@ -2073,6 +2314,7 @@ const ldrInt = setInterval(() => {
     lbar.style.width = '100%';
     lpercent.textContent = '100';
     loaderText.textContent = 'Welcome';
+    playFinalSound();
     setTimeout(() => {
       document.getElementById('loader').classList.add('hide');
       // Trigger hero animation after loader
@@ -2084,6 +2326,7 @@ const ldrInt = setInterval(() => {
   }
   lbar.style.width = prog + '%';
   lpercent.textContent = Math.floor(prog);
+  playTickSound(prog);
   const msgIdx = Math.floor((prog/100) * (loadMsgs.length-1));
   loaderText.textContent = loadMsgs[Math.min(msgIdx, loadMsgs.length-1)];
 }, 100);
@@ -2162,7 +2405,163 @@ window.addEventListener('resize', () => {
 
 // cursor removed
 
-// Coin: fixed position, only CSS spin animation — no drag, no sound
+// ── COIN PARALLAX (desktop) ──
+document.addEventListener('mousemove', e => {
+  const cw = document.getElementById('coinWrap');
+  if(!cw || isDragging) return;
+  const x = (e.clientX/window.innerWidth-0.5)*40;
+  const y = (e.clientY/window.innerHeight-0.5)*-30;
+  cw.style.transform = `translateY(-50%) translate(${x}px,${y}px)`;
+});
+
+// ── COIN DRAG + SPRING BACK ──
+const coinWrap = document.getElementById('coinWrap');
+const coin3d = document.getElementById('coin3d');
+let isDragging = false;
+let dragStartX = 0, dragStartY = 0;
+let coinOffsetX = 0, coinOffsetY = 0;
+let velX = 0, velY = 0;
+let lastX = 0, lastY = 0;
+let animFrame;
+
+function playCoinSound(type) {
+  try {
+    const ctx = new (window.AudioContext || window.webkitAudioContext)();
+    if(type === 'grab') {
+      // soft thud
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.connect(gain); gain.connect(ctx.destination);
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(180, ctx.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(80, ctx.currentTime+0.15);
+      gain.gain.setValueAtTime(0.2, ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime+0.15);
+      osc.start(ctx.currentTime); osc.stop(ctx.currentTime+0.15);
+    } else if(type === 'spin') {
+      // metallic whoosh
+      const buf = ctx.createBuffer(1, ctx.sampleRate*0.3, ctx.sampleRate);
+      const d = buf.getChannelData(0);
+      for(let i=0;i<d.length;i++) d[i]=(Math.random()*2-1)*Math.pow(1-i/d.length,2)*0.3;
+      const src = ctx.createBufferSource();
+      const filt = ctx.createBiquadFilter();
+      filt.type='bandpass'; filt.frequency.value=1200; filt.Q.value=2;
+      src.buffer=buf; src.connect(filt); filt.connect(ctx.destination);
+      src.start();
+    } else if(type === 'snap') {
+      // spring snap back
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.connect(gain); gain.connect(ctx.destination);
+      osc.type='sine';
+      osc.frequency.setValueAtTime(320, ctx.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(520, ctx.currentTime+0.08);
+      osc.frequency.exponentialRampToValueAtTime(280, ctx.currentTime+0.2);
+      gain.gain.setValueAtTime(0.15, ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime+0.25);
+      osc.start(ctx.currentTime); osc.stop(ctx.currentTime+0.25);
+    }
+  } catch(e){}
+}
+
+function springBack() {
+  cancelAnimationFrame(animFrame);
+  let x = coinOffsetX, y = coinOffsetY;
+  let vx = velX * 0.3, vy = velY * 0.3;
+  const stiffness = 0.15, damping = 0.75;
+
+  function animate() {
+    // Spring force toward origin
+    const fx = -stiffness * x;
+    const fy = -stiffness * y;
+    vx = (vx + fx) * damping;
+    vy = (vy + fy) * damping;
+    x += vx; y += vy;
+    coinOffsetX = x; coinOffsetY = y;
+    coinWrap.style.transform = `translateY(-50%) translate(${x}px,${y}px)`;
+    // Wobble coin on return
+    const wobble = Math.sin(Date.now()*0.02) * Math.abs(x) * 0.02;
+    coin3d.style.transform = `rotateZ(${wobble}deg)`;
+    if(Math.abs(x) > 0.5 || Math.abs(y) > 0.5 || Math.abs(vx) > 0.1 || Math.abs(vy) > 0.1) {
+      animFrame = requestAnimationFrame(animate);
+    } else {
+      coinOffsetX = 0; coinOffsetY = 0;
+      coinWrap.style.transform = `translateY(-50%) translate(0,0)`;
+      coin3d.style.transform = '';
+    }
+  }
+  playCoinSound('snap');
+  animate();
+}
+
+// Touch events
+coinWrap.addEventListener('touchstart', e => {
+  isDragging = true;
+  cancelAnimationFrame(animFrame);
+  const t = e.touches[0];
+  dragStartX = t.clientX - coinOffsetX;
+  dragStartY = t.clientY - coinOffsetY;
+  lastX = t.clientX; lastY = t.clientY;
+  velX = 0; velY = 0;
+  coin3d.style.animationPlayState = 'paused';
+  playCoinSound('grab');
+  e.preventDefault();
+}, {passive:false});
+
+coinWrap.addEventListener('touchmove', e => {
+  if(!isDragging) return;
+  const t = e.touches[0];
+  const newX = t.clientX - dragStartX;
+  const newY = t.clientY - dragStartY;
+  velX = t.clientX - lastX;
+  velY = t.clientY - lastY;
+  lastX = t.clientX; lastY = t.clientY;
+  coinOffsetX = newX; coinOffsetY = newY;
+  coinWrap.style.transform = `translateY(-50%) translate(${newX}px,${newY}px)`;
+  // Tilt coin based on drag speed
+  const tilt = Math.max(-25, Math.min(25, velX * 2));
+  coin3d.style.transform = `rotateZ(${tilt}deg) rotateY(${velX*3}deg)`;
+  if(Math.abs(velX) > 5) playCoinSound('spin');
+  e.preventDefault();
+}, {passive:false});
+
+coinWrap.addEventListener('touchend', () => {
+  isDragging = false;
+  coin3d.style.animationPlayState = 'running';
+  coin3d.style.transition = 'transform 0.3s';
+  springBack();
+  setTimeout(()=>{ coin3d.style.transition=''; }, 300);
+});
+
+// Mouse drag too
+coinWrap.addEventListener('mousedown', e => {
+  isDragging = true;
+  cancelAnimationFrame(animFrame);
+  dragStartX = e.clientX - coinOffsetX;
+  dragStartY = e.clientY - coinOffsetY;
+  lastX = e.clientX; lastY = e.clientY;
+  velX = 0; velY = 0;
+  coin3d.style.animationPlayState = 'paused';
+  playCoinSound('grab');
+});
+document.addEventListener('mousemove', e => {
+  if(!isDragging) return;
+  const newX = e.clientX - dragStartX;
+  const newY = e.clientY - dragStartY;
+  velX = e.clientX - lastX;
+  velY = e.clientY - lastY;
+  lastX = e.clientX; lastY = e.clientY;
+  coinOffsetX = newX; coinOffsetY = newY;
+  coinWrap.style.transform = `translateY(-50%) translate(${newX}px,${newY}px)`;
+  const tilt = Math.max(-25, Math.min(25, velX * 2));
+  coin3d.style.transform = `rotateZ(${tilt}deg) rotateY(${velX*3}deg)`;
+});
+document.addEventListener('mouseup', () => {
+  if(!isDragging) return;
+  isDragging = false;
+  coin3d.style.animationPlayState = 'running';
+  springBack();
+});
 
 // ── PARTICLES AROUND COIN ──
 const pc = document.getElementById('particles');
@@ -2198,6 +2597,17 @@ signs.forEach((s,i)=>{
     --r:${-20+Math.random()*40}deg;
   `;
   fs.appendChild(el);
+});
+
+// ── SMOOTH SCROLL FOR ALL ANCHOR LINKS ──
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', function(e) {
+    const target = document.querySelector(this.getAttribute('href'));
+    if(target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
 });
 
 // ── SCROLL REVEAL ──
