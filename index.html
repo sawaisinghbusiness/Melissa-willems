@@ -1951,7 +1951,7 @@ footer{
 }
 .social-banner-strip{
   background:linear-gradient(90deg,#0a0a0c 0%,#111108 40%,#0a0a0c 100%);
-  padding:60px 24px 56px;
+  padding:56px 24px 52px;
   text-align:center;
   position:relative;
 }
@@ -1967,7 +1967,6 @@ footer{
   bottom:0;left:0;right:0;height:1px;
   background:linear-gradient(90deg,transparent,rgba(212,168,67,0.15),transparent);
 }
-/* Ambient glow */
 .social-glow{
   position:absolute;
   width:500px;height:300px;
@@ -1998,179 +1997,80 @@ footer{
   font-size:clamp(28px,5vw,48px);
   font-weight:900;
   color:#fff;
-  margin-bottom:40px;
+  margin-bottom:36px;
   line-height:1.1;
 }
 .social-heading em{
   font-style:italic;
   color:var(--gold);
 }
-/* Cards row */
+/* Icon buttons row */
 .social-cards{
   display:flex;
   justify-content:center;
-  gap:16px;
-  flex-wrap:wrap;
-  max-width:600px;
-  margin:0 auto;
+  align-items:center;
+  gap:28px;
 }
+/* Each icon link */
 .social-card{
-  flex:1;
-  min-width:140px;
-  max-width:240px;
-  border-radius:16px;
-  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:10px;
   text-decoration:none;
+  position:relative;
+}
+.sc-icon-circle{
+  width:64px;height:64px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
   position:relative;
   transition:transform 0.35s cubic-bezier(0.16,1,0.3,1), box-shadow 0.35s;
 }
-.social-card:hover{
-  transform:translateY(-6px) scale(1.02);
-}
-/* Instagram card */
-.social-card.insta{
-  background:linear-gradient(145deg,#1a0a10 0%,#130818 100%);
-  border:1px solid rgba(225,48,108,0.2);
-  box-shadow:0 4px 24px rgba(225,48,108,0.08);
-}
-.social-card.insta:hover{
-  box-shadow:0 12px 40px rgba(225,48,108,0.22);
-  border-color:rgba(225,48,108,0.45);
-}
-/* Facebook card */
-.social-card.fb{
-  background:linear-gradient(145deg,#080f1a 0%,#060c18 100%);
-  border:1px solid rgba(24,119,242,0.2);
-  box-shadow:0 4px 24px rgba(24,119,242,0.08);
-}
-.social-card.fb:hover{
-  box-shadow:0 12px 40px rgba(24,119,242,0.22);
-  border-color:rgba(24,119,242,0.45);
-}
-/* Thumbnail preview area */
-.sc-thumb{
-  width:100%;
-  height:110px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  position:relative;
-  overflow:hidden;
-}
-.social-card.insta .sc-thumb{
-  background:linear-gradient(135deg,rgba(225,48,108,0.12),rgba(131,58,180,0.12));
-}
-.social-card.fb .sc-thumb{
-  background:linear-gradient(135deg,rgba(24,119,242,0.12),rgba(10,60,130,0.12));
-}
-/* Grid lines inside thumb */
-.sc-thumb::before{
+.sc-icon-circle::after{
   content:'';
-  position:absolute;inset:0;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);
-  background-size:20px 20px;
+  position:absolute;inset:-3px;
+  border-radius:50%;
+  border:1px solid transparent;
+  transition:border-color 0.3s, box-shadow 0.3s;
 }
-.sc-platform-icon{
-  width:48px;height:48px;
-  border-radius:14px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  position:relative;z-index:1;
-}
-.social-card.insta .sc-platform-icon{
+.social-card.insta .sc-icon-circle{
   background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);
-  box-shadow:0 4px 20px rgba(225,48,108,0.4);
+  box-shadow:0 4px 18px rgba(225,48,108,0.3);
 }
-.social-card.fb .sc-platform-icon{
+.social-card.insta:hover .sc-icon-circle{
+  transform:translateY(-4px) scale(1.08);
+  box-shadow:0 10px 30px rgba(225,48,108,0.5);
+}
+.social-card.insta:hover .sc-icon-circle::after{
+  border-color:rgba(225,48,108,0.4);
+  box-shadow:0 0 0 4px rgba(225,48,108,0.08);
+}
+.social-card.fb .sc-icon-circle{
   background:linear-gradient(135deg,#1877f2,#0a5ec7);
-  box-shadow:0 4px 20px rgba(24,119,242,0.4);
+  box-shadow:0 4px 18px rgba(24,119,242,0.3);
 }
-.sc-platform-icon svg{stroke:#fff;fill:none;}
-/* Card body */
-.sc-body{
-  padding:14px 16px 16px;
-  text-align:left;
+.social-card.fb:hover .sc-icon-circle{
+  transform:translateY(-4px) scale(1.08);
+  box-shadow:0 10px 30px rgba(24,119,242,0.5);
 }
-.sc-platform-name{
+.social-card.fb:hover .sc-icon-circle::after{
+  border-color:rgba(24,119,242,0.4);
+  box-shadow:0 0 0 4px rgba(24,119,242,0.08);
+}
+.sc-icon-circle svg{stroke:#fff;fill:none;}
+.sc-label{
   font-size:9px;
   letter-spacing:3px;
   text-transform:uppercase;
-  margin-bottom:4px;
-}
-.social-card.insta .sc-platform-name{color:rgba(225,48,108,0.7);}
-.social-card.fb .sc-platform-name{color:rgba(24,119,242,0.7);}
-.sc-handle{
-  font-family:'Playfair Display',serif;
-  font-size:13px;
-  font-weight:700;
-  color:#fff;
-  margin-bottom:12px;
-  white-space:nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis;
-}
-/* Follow button */
-.sc-follow-btn{
-  width:100%;
-  padding:9px 0;
-  border-radius:8px;
-  font-size:10px;
-  letter-spacing:2.5px;
-  text-transform:uppercase;
-  font-weight:600;
+  color:rgba(255,255,255,0.35);
   font-family:'DM Sans',sans-serif;
-  border:none;
-  cursor:pointer;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:7px;
-  transition:all 0.3s;
-  text-decoration:none;
-  position:relative;
-  overflow:hidden;
+  transition:color 0.3s;
 }
-.sc-follow-btn::before{
-  content:'';
-  position:absolute;inset:0;
-  opacity:0;
-  transition:opacity 0.3s;
-}
-.social-card.insta .sc-follow-btn{
-  background:rgba(225,48,108,0.12);
-  color:rgba(225,48,108,0.9);
-  border:1px solid rgba(225,48,108,0.25);
-}
-.social-card.insta .sc-follow-btn::before{
-  background:linear-gradient(135deg,#f09433,#dc2743,#bc1888);
-}
-.social-card.fb .sc-follow-btn{
-  background:rgba(24,119,242,0.12);
-  color:rgba(24,119,242,0.9);
-  border:1px solid rgba(24,119,242,0.25);
-}
-.social-card.fb .sc-follow-btn::before{
-  background:linear-gradient(135deg,#1877f2,#0a5ec7);
-}
-.social-card:hover .sc-follow-btn::before{opacity:1;}
-.social-card:hover .sc-follow-btn{color:#fff;border-color:transparent;}
-.sc-follow-btn span{position:relative;z-index:1;}
-/* Animated shimmer on hover */
-@keyframes shimmer{
-  0%{transform:translateX(-100%);}
-  100%{transform:translateX(100%);}
-}
-.social-card:hover .sc-thumb::after{
-  content:'';
-  position:absolute;
-  top:0;left:0;
-  width:60%;height:100%;
-  background:linear-gradient(90deg,transparent,rgba(255,255,255,0.05),transparent);
-  animation:shimmer 0.8s ease forwards;
-}
+.social-card.insta:hover .sc-label{color:rgba(225,48,108,0.7);}
+.social-card.fb:hover .sc-label{color:rgba(24,119,242,0.7);}
 </style>
 
 <section id="social">
@@ -2184,34 +2084,18 @@ footer{
 
       <!-- Instagram -->
       <a href="https://www.instagram.com/mwbookkeepingandtax?igsh=MTN2OHptcTQ5azE3dg==" target="_blank" class="social-card insta">
-        <div class="sc-thumb">
-          <div class="sc-platform-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-          </div>
+        <div class="sc-icon-circle">
+          <svg width="26" height="26" viewBox="0 0 24 24" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
         </div>
-        <div class="sc-body">
-          <div class="sc-platform-name">Instagram</div>
-          <div class="sc-handle">@mwbookkeepingandtax</div>
-          <div class="sc-follow-btn">
-            <span>Follow</span>
-          </div>
-        </div>
+        <div class="sc-label">Instagram</div>
       </a>
 
       <!-- Facebook -->
       <a href="https://www.facebook.com/MWBookkeepingandTax/" target="_blank" class="social-card fb">
-        <div class="sc-thumb">
-          <div class="sc-platform-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
-          </div>
+        <div class="sc-icon-circle">
+          <svg width="26" height="26" viewBox="0 0 24 24" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
         </div>
-        <div class="sc-body">
-          <div class="sc-platform-name">Facebook</div>
-          <div class="sc-handle">MW Bookkeeping & Tax</div>
-          <div class="sc-follow-btn">
-            <span>Follow</span>
-          </div>
-        </div>
+        <div class="sc-label">Facebook</div>
       </a>
 
     </div>
